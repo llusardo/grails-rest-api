@@ -18,3 +18,14 @@ curl -i -H "Content-Type:application/json" -X PUT localhost:8080/products/1 -d '
 
 Delete data:
 curl -i -X DELETE localhost:8080/products/1
+
+
+Auth:
+Obtain token:
+curl -i -H "Content-Type:application/js-X POST localhost:8080/api/login -d '{"username":"admin","password": "admin"}'
+
+Validate token:
+curl -i -H "Authorization: Bearer 664dkbafcuo4prsd02vocvlfvaok5nvl" http://localhost:8080/api/validate
+
+Logout:
+curl -i -H "X-Auth-Token:664dkbafcuo4prsd02vocvlfvaok5nvl" -X POST http://localhost:8080/api/logout HTTP/1.1 200 OK

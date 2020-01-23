@@ -29,6 +29,10 @@ configurations {
     }
 }
 
+ext{
+    springSecurityRestVersion = '3.0.0.RC1'
+}
+
 dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     compile "org.springframework.boot:spring-boot-starter-logging"
@@ -63,6 +67,9 @@ dependencies {
     testCompile "io.micronaut:micronaut-http-client"
     testCompile "org.grails:grails-web-testing-support"
     runtime 'mysql:mysql-connector-java:5.1.29'
+    //grails REST API Security plugin
+    compile "org.grails.plugins:spring-security-rest:${springSecurityRestVersion}"
+    compile "org.grails.plugins:spring-security-rest-gorm:${springSecurityRestVersion}"
 }
 
 bootRun {
