@@ -10,11 +10,13 @@ class UrlMappings {
         put "/$controller/$id(.$format)?"(action:"update")
         patch "/$controller/$id(.$format)?"(action:"patch")
 
-        '/products'(resources: 'product') {
+        '/api/v1/products'(resources: 'product') {
             collection {
                 '/search'(controller: 'product', action: 'search')
             }
         }
+
+        "/artists"(resources: 'artist')
 
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')

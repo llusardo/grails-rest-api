@@ -8,13 +8,13 @@ Create data:
 curl -i -H "Content-Type:application/json" -X POST localhost:8080/products -d '{"name":"Orange","price":2.0}'
 
 Read data:
-curl -i  localhost:8080/products
+curl -i  -H "Content-Type:application/json" -H "Authorization: Bearer j2tbn74eq6cf1fhlc4pn3mdovvd7m2kj" localhost:8080/products
 
 Single instance:
-curl -i  localhost:8080/products/1
+curl -i  -H "Content-Type:application/json" -H "Authorization: Bearer j2tbn74eq6cf1fhlc4pn3mdovvd7m2kj" localhost:8080/products/1
 
 Update data:
-curl -i -H "Content-Type:application/json" -X PUT localhost:8080/products/1 -d '{"price":3.0}'
+curl -i -H "Content-Type:application/json" -H "Authorization: Bearer j2tbn74eq6cf1fhlc4pn3mdovvd7m2kj" -X PUT localhost:8080/products/1 -d '{"price":3.0}'
 
 Delete data:
 curl -i -X DELETE localhost:8080/products/1
@@ -29,3 +29,6 @@ curl -i -H "Authorization: Bearer 664dkbafcuo4prsd02vocvlfvaok5nvl" http://local
 
 Logout:
 curl -i -H "X-Auth-Token:664dkbafcuo4prsd02vocvlfvaok5nvl" -X POST http://localhost:8080/api/logout HTTP/1.1 200 OK
+
+
+fmmeq4s20n7n8m64fubfh39fri6l4mon

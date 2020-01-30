@@ -1,8 +1,8 @@
 package grails.rest.api
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.rest.RestfulController
 
-//tag::controller[]
 import groovy.transform.CompileStatic
 
 @CompileStatic
@@ -12,18 +12,44 @@ class ProductController extends RestfulController {
         super(Product)
     }
     ProductService productService
-    //end::controller[]
 
-    // tag::searchAction[]
-    def search(String q, Integer max ) { // <1>
+    @Secured('permitAll')
+    @Override
+    def index(Integer max) {
+        super.index(max)
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Override
+    def show() {
+        super.show()
+    }
+
+    @Secured('ROLE_ADMIN')
+    @Override
+    def save() {
+        super.save()
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    @Override
+    def update() {
+        super.update()
+    }
+
+    @Secured('ROLE_ADMIN')
+    @Override
+    def delete() {
+        super.delete()
+    }
+
+    @Secured(['ROLE_USER', 'ROLE_ADMIN'])
+    def search(String q, Integer max ) {
         if (q) {
-            //tag::respond[]
             respond productService.findByNameLike("%${q}%".toString(), [max: Math.min( max ?: 10, 100)]) // <3>
-            //end::respond[]
         }
         else {
-            respond([]) // <4>
+            respond([])
         }
     }
-    //end::searchAction[]
 }
