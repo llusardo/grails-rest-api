@@ -16,6 +16,10 @@ class UrlMappings {
             }
         }
 
+        '/api/v1/users'(resources: 'user')
+
+        '/api/v1/roles'(resources: 'role')
+
         "/artists"(resources: 'artist')
 
         "/"(controller: 'application', action:'index')

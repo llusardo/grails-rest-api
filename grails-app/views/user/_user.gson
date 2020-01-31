@@ -1,0 +1,11 @@
+import grails.rest.api.security.User
+
+model {
+    User user
+}
+
+json {
+    id user.id
+    username user.username
+    authorities user.getAuthorities()
+}
