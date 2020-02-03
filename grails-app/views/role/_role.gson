@@ -6,4 +6,5 @@ model {
 
 json {
     id role.id
+    authority role.authority
 }

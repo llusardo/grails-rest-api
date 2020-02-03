@@ -22,7 +22,7 @@ curl -i -X DELETE localhost:8080/products/1
 
 Auth:
 Obtain token:
-curl -i -H "Content-Type:application/js-X POST localhost:8080/api/login -d '{"username":"admin","password": "admin"}'
+curl -i -H "Content-Type:application/js-X POST localhost:8080/api/v1/auth/login -d '{"username":"admin","password": "admin"}'
 
 Validate token:
 curl -i -H "Authorization: Bearer 664dkbafcuo4prsd02vocvlfvaok5nvl" http://localhost:8080/api/validate

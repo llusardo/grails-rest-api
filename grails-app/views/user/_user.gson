@@ -7,5 +7,5 @@ model {
 json {
     id user.id
     username user.username
-    authorities user.getAuthorities()
+    authorities g.render(template:"/role/role", collection: user.getAuthorities(), var: 'role')
 }
