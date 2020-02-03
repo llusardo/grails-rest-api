@@ -1,5 +1,5 @@
 # grails-rest-api
-A example of REST API with  GRAILS
+Example REST API made with  GRAILS
 
 
 Examples: 
