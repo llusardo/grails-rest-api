@@ -1,6 +1,5 @@
 package grails.rest.api.security
 
-
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 import grails.compiler.GrailsCompileStatic

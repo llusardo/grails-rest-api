@@ -1,0 +1,10 @@
+import grails.rest.api.Greeting
+
+model {
+    Greeting greeting
+}
+
+json {
+    type greeting.type
+    value g.render(greeting.value)
+}

@@ -1,0 +1,11 @@
+package greetingValue
+
+import grails.rest.api.GreetingValue
+
+model {
+    GreetingValue greetingValue
+}
+
+json {
+    quote greetingValue.getQuote()
+}

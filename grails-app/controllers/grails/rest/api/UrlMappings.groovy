@@ -14,6 +14,9 @@ class UrlMappings {
             collection {
                 '/search'(controller: 'product', action: 'search')
             }
+            collection{
+                '/rest-client-example'(controller: 'product', action: 'restClientExample', method: 'GET')
+            }
         }
 
         '/api/v1/users'(resources: 'user')
